@@ -1,0 +1,73 @@
+--- configure	2017-01-19 14:41:03.108417825 +0800
++++ configure.old	2017-01-19 14:39:53.539822723 +0800
+@@ -17811,9 +17811,9 @@ fi
+           have_qt4=no
+ 
+   have_qt=no
+-  if test "$with_qt4" = "yes";  then
+-    PKG_CHECK_MODULES(QT, QtCore >= 4.3, QtNetwork >= 4.3, have_qt=yes, have_qt=no)
+-  fi
++#  if test "$with_qt4" = "yes";  then
++#    PKG_CHECK_MODULES(QT, QtCore >= 4.3, QtNetwork >= 4.3, have_qt=yes, have_qt=no)
++#  fi
+   if test "$have_qt" = "yes"; then
+     for ac_prog in moc-qt4 moc
+ do
+@@ -17880,11 +17880,11 @@ fi
+ 
+   have_qt5=no
+   qt_reduce_reloc=""
+-  if test "$with_qt5" = "yes";  then
+-    PKG_CHECK_MODULES(QT5, Qt5Core >= 5.0, Qt5Network >= 5.0,
+-                      have_qt5=yes;qt_reduce_reloc=`$PKG_CONFIG --variable=qt_config Qt5Core | grep "reduce_relocations"`,
+-                      have_qt5=no)
+-  fi
++#  if test "$with_qt5" = "yes";  then
++#    PKG_CHECK_MODULES(QT5, Qt5Core >= 5.0, Qt5Network >= 5.0,
++#                      have_qt5=yes;qt_reduce_reloc=`$PKG_CONFIG --variable=qt_config Qt5Core | grep "reduce_relocations"`,
++#                      have_qt5=no)
++#  fi
+   if test "$have_qt5" = "yes"; then
+     for ac_prog in moc-qt5 moc
+ do
+@@ -17999,8 +17999,10 @@ fi
+           have_c_glib=no
+ 
+ if test "$with_c_glib" = "yes"; then
+-  PKG_CHECK_MODULES(GLIB, glib-2.0 >= 2.0, have_glib2=yes, have_glib2=no)
+-  PKG_CHECK_MODULES(GOBJECT, gobject-2.0 >= 2.0, have_gobject2=yes, have_gobject2=no)
++  #PKG_CHECK_MODULES(GLIB, glib-2.0 >= 2.0, have_glib2=yes, have_glib2=no)
++  #PKG_CHECK_MODULES(GOBJECT, gobject-2.0 >= 2.0, have_gobject2=yes, have_gobject2=no)
++  have_glib2=yes
++  have_gobject2=yes
+   if test "$have_glib2" = "yes" -a "$have_gobject2" = "yes" ; then
+     have_c_glib="yes"
+   fi
+@@ -18026,8 +18028,9 @@ fi
+ 
+           have_csharp=no
+ 
++with_csharp=no		  
+ if test "$with_csharp" = "yes";  then
+-  PKG_CHECK_MODULES(MONO, mono >= 2.11.0, mono_2_11=yes, mono_2_11=no)
++  #PKG_CHECK_MODULES(MONO, mono >= 2.11.0, mono_2_11=yes, mono_2_11=no)
+   if test "$mono_2_11" == "yes"; then
+     # Extract the first word of "mcs", so it can be a program name with args.
+ set dummy mcs; ac_word=$2
+@@ -18073,11 +18076,11 @@ fi
+       mono_mcs="yes"
+     fi
+   fi
+-  PKG_CHECK_MODULES(MONO, mono >= 2.0.0, net_3_5=yes, net_3_5=no)
+-  PKG_CHECK_MODULES(MONO, mono >= 1.2.4, have_mono=yes, have_mono=no)
+-  if test "$have_mono" = "yes" ; then
+-    have_csharp="yes"
+-  fi
++  #PKG_CHECK_MODULES(MONO, mono >= 2.0.0, net_3_5=yes, net_3_5=no)
++  #PKG_CHECK_MODULES(MONO, mono >= 1.2.4, have_mono=yes, have_mono=no)
++  #if test "$have_mono" = "yes" ; then
++  #  have_csharp="yes"
++  #fi
+ fi
+  if test "$have_csharp" = "yes"; then
+   WITH_MONO_TRUE=

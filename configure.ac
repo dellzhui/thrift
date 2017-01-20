@@ -156,9 +156,9 @@ if test "$with_cpp" = "yes";  then
 
   AX_THRIFT_LIB(qt4, [Qt], yes)
   have_qt=no
-  if test "$with_qt4" = "yes";  then
-    PKG_CHECK_MODULES([QT], [QtCore >= 4.3, QtNetwork >= 4.3], have_qt=yes, have_qt=no)
-  fi
+#  if test "$with_qt4" = "yes";  then
+#    PKG_CHECK_MODULES([QT], [QtCore >= 4.3, QtNetwork >= 4.3], have_qt=yes, have_qt=no)
+#  fi
   if test "$have_qt" = "yes"; then
     AC_PATH_PROGS([QT_MOC], [moc-qt4 moc], "fail")
     if test "$QT_MOC" = "fail"; then
@@ -169,11 +169,11 @@ if test "$with_cpp" = "yes";  then
   AX_THRIFT_LIB(qt5, [Qt5], yes)
   have_qt5=no
   qt_reduce_reloc=""
-  if test "$with_qt5" = "yes";  then
-    PKG_CHECK_MODULES([QT5], [Qt5Core >= 5.0, Qt5Network >= 5.0],
-                      [have_qt5=yes;qt_reduce_reloc=`$PKG_CONFIG --variable=qt_config Qt5Core | grep "reduce_relocations"`],
-                      [have_qt5=no])
-  fi
+#  if test "$with_qt5" = "yes";  then
+#    PKG_CHECK_MODULES([QT5], [Qt5Core >= 5.0, Qt5Network >= 5.0],
+#                      [have_qt5=yes;qt_reduce_reloc=`$PKG_CONFIG --variable=qt_config Qt5Core | grep "reduce_relocations"`],
+#                      [have_qt5=no])
+#  fi
   if test "$have_qt5" = "yes"; then
     AC_PATH_PROGS([QT5_MOC], [moc-qt5 moc], "fail")
     if test "$QT5_MOC" = "fail"; then
@@ -190,8 +190,10 @@ AM_CONDITIONAL([QT5_REDUCE_RELOCATIONS], [test "x$qt_reduce_reloc" != "x"])
 
 AX_THRIFT_LIB(c_glib, [C (GLib)], yes)
 if test "$with_c_glib" = "yes"; then
-  PKG_CHECK_MODULES([GLIB], [glib-2.0 >= 2.0], have_glib2=yes, have_glib2=no)
-  PKG_CHECK_MODULES([GOBJECT], [gobject-2.0 >= 2.0], have_gobject2=yes, have_gobject2=no)
+#  PKG_CHECK_MODULES([GLIB], [glib-2.0 >= 2.0], have_glib2=yes, have_glib2=no)
+#  PKG_CHECK_MODULES([GOBJECT], [gobject-2.0 >= 2.0], have_gobject2=yes, have_gobject2=no)
+  have_glib2=yes
+  have_gobject2=yes
   if test "$have_glib2" = "yes" -a "$have_gobject2" = "yes" ; then
     have_c_glib="yes"
   fi
@@ -200,18 +202,18 @@ AM_CONDITIONAL(WITH_C_GLIB, [test "$have_glib2" = "yes" -a "$have_gobject2" = "y
 
 AX_THRIFT_LIB(csharp, [C#], yes)
 if test "$with_csharp" = "yes";  then
-  PKG_CHECK_MODULES(MONO, mono >= 2.11.0, mono_2_11=yes, mono_2_11=no)
+#  PKG_CHECK_MODULES(MONO, mono >= 2.11.0, mono_2_11=yes, mono_2_11=no)
   if test "$mono_2_11" == "yes"; then
     AC_PATH_PROG([MCS], [mcs])
     if test "x$MCS" != "x"; then
       mono_mcs="yes"
     fi
   fi
-  PKG_CHECK_MODULES(MONO, mono >= 2.0.0, net_3_5=yes, net_3_5=no)
-  PKG_CHECK_MODULES(MONO, mono >= 1.2.4, have_mono=yes, have_mono=no)
-  if test "$have_mono" = "yes" ; then
-    have_csharp="yes"
-  fi
+#  PKG_CHECK_MODULES(MONO, mono >= 2.0.0, net_3_5=yes, net_3_5=no)
+#  PKG_CHECK_MODULES(MONO, mono >= 1.2.4, have_mono=yes, have_mono=no)
+#  if test "$have_mono" = "yes" ; then
+#    have_csharp="yes"
+#  fi
 fi
 AM_CONDITIONAL(WITH_MONO, [test "$have_csharp" = "yes"])
 AM_CONDITIONAL(NET_2_0, [test "$net_3_5" = "no"])

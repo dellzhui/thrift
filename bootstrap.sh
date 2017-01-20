@@ -53,7 +53,3 @@ autoheader
 autoconf
 automake --copy --add-missing --foreign
 
-if [ -e fix.patch ];then
-    patch -p0 < fix.patch || rm -f configure
-fi
-

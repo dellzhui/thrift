@@ -24,7 +24,9 @@
 
 #include <thrift/c_glib/protocol/thrift_protocol_factory.h>
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /* type macros */
 #define THRIFT_TYPE_BINARY_PROTOCOL_FACTORY (thrift_binary_protocol_factory_get_type ())
@@ -51,6 +53,8 @@ struct _ThriftBinaryProtocolFactoryClass
 /* used by THRIFT_TYPE_BINARY_PROTOCOL_FACTORY */
 GType thrift_binary_protocol_factory_get_type (void);
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif /* _THRIFT_BINARY_PROTOCOL_FACTORY_H */

@@ -24,7 +24,9 @@
 
 #include <thrift/c_glib/processor/thrift_processor.h>
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /*! \file thrift_dispatch_processor.h
  *  \brief Parses a method-call message header and invokes a function
@@ -90,6 +92,8 @@ gboolean thrift_dispatch_processor_process (ThriftProcessor *processor,
                                             ThriftProtocol *out,
                                             GError **error);
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif /* _THRIFT_DISPATCH_PROCESSOR_H */

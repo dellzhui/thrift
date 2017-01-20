@@ -25,7 +25,9 @@
 #include <thrift/c_glib/transport/thrift_transport.h>
 #include <thrift/c_glib/protocol/thrift_protocol.h>
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /*! \file thrift_protocol_factory.h
  *  \brief Abstract class for Thrift protocol factory implementations.
@@ -68,6 +70,8 @@ GType thrift_protocol_factory_get_type (void);
 /* virtual public methods */
 ThriftProtocol *thrift_protocol_factory_get_protocol(ThriftProtocolFactory *factory, ThriftTransport *transport);
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif /* _THRIFT_PROTOCOL_FACTORY_H */

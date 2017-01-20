@@ -24,7 +24,9 @@
 
 #include <thrift/c_glib/transport/thrift_transport.h>
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /*! \file thrift_socket.h
  *  \brief Socket implementation of a Thrift transport.  Subclasses the
@@ -70,6 +72,8 @@ struct _ThriftSocketClass
 /* used by THRIFT_TYPE_SOCKET */
 GType thrift_socket_get_type (void);
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif

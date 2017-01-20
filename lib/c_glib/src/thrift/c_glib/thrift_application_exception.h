@@ -23,7 +23,9 @@
 #include <glib-object.h>
 #include "thrift_struct.h"
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /*! \file thrift_application_exception.h
  *  \brief C Implementation of a TApplicationException.
@@ -81,6 +83,8 @@ typedef enum
 GQuark thrift_application_exception_error_quark (void);
 #define THRIFT_APPLICATION_EXCEPTION_ERROR (thrift_application_exception_error_quark ())
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif /* _THRIFT_APPLICATION_EXCEPTION_H */

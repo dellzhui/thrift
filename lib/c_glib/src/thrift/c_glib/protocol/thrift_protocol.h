@@ -24,7 +24,9 @@
 
 #include <thrift/c_glib/transport/thrift_transport.h>
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /*! \file thrift_protocol.h
  *  \brief Abstract class for Thrift protocol implementations.
@@ -336,6 +338,8 @@ typedef enum
 GQuark thrift_protocol_error_quark (void);
 #define THRIFT_PROTOCOL_ERROR (thrift_protocol_error_quark ())
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif /* _THRIFT_PROTOCOL_H */

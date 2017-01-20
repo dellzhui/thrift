@@ -25,7 +25,9 @@
 
 #include <thrift/c_glib/transport/thrift_transport.h>
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /*! \file thrift_memory_buffer.h
  *  \brief Implementation of a Thrift memory buffer transport.
@@ -67,6 +69,8 @@ struct _ThriftMemoryBufferClass
 /* used by THRIFT_TYPE_MEMORY_BUFFER */
 GType thrift_memory_buffer_get_type (void);
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif

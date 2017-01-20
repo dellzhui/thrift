@@ -33,7 +33,9 @@
 
 #include "gen-c_glib/calculator.h"
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /* In the C (GLib) implementation of Thrift, the actual work done by a
    server---that is, the code that runs when a client invokes a
@@ -92,7 +94,9 @@ typedef struct _TutorialCalculatorHandlerClass TutorialCalculatorHandlerClass;
 
 GType tutorial_calculator_handler_get_type (void);
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 /* ---------------------------------------------------------------- */
 

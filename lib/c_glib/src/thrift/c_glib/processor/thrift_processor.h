@@ -24,7 +24,9 @@
 
 #include <thrift/c_glib/protocol/thrift_protocol.h>
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /*! \file thrift_processor.h
  *  \brief Abstract class for Thrift processors.
@@ -71,6 +73,8 @@ gboolean thrift_processor_process (ThriftProcessor *processor,
                                    ThriftProtocol *in, ThriftProtocol *out,
                                    GError **error);
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif /* _THRIFT_PROCESSOR_H */

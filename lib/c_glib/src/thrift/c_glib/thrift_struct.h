@@ -24,7 +24,9 @@
 
 #include <thrift/c_glib/protocol/thrift_protocol.h>
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 #define THRIFT_TYPE_STRUCT (thrift_struct_get_type ())
 #define THRIFT_STRUCT(obj) (G_TYPE_CHECK_INSTANCE_CAST ((obj), THRIFT_TYPE_STRUCT, ThriftStruct))
@@ -63,6 +65,8 @@ gint32 thrift_struct_read (ThriftStruct *object, ThriftProtocol *protocol,
 
 gint32 thrift_struct_write (ThriftStruct *object, ThriftProtocol *protocol,
                             GError **error);
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif

@@ -25,7 +25,9 @@
 
 #include "../gen-c_glib/t_test_thrift_test.h"
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /* A handler that implements the TTestThriftTestIf interface */
 
@@ -240,6 +242,8 @@ gboolean thrift_test_handler_test_oneway          (TTestThriftTestIf    *iface,
                                                    const gint32          secondsToSleep,
                                                    GError              **error);
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif /* _THRIFT_TEST_HANDLER_H */

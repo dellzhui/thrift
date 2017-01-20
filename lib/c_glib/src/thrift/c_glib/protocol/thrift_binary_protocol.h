@@ -25,7 +25,9 @@
 #include <thrift/c_glib/protocol/thrift_protocol.h>
 #include <thrift/c_glib/transport/thrift_transport.h>
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /*! \file thrift_binary_protocol.h
  *  \brief Binary protocol implementation of a Thrift protocol.  Implements the
@@ -67,6 +69,8 @@ struct _ThriftBinaryProtocolClass
 /* used by THRIFT_TYPE_BINARY_PROTOCOL */
 GType thrift_binary_protocol_get_type (void);
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif /* _THRIFT_BINARY_PROTOCOL_H */

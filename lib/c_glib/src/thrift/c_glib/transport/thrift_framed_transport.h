@@ -25,7 +25,9 @@
 
 #include <thrift/c_glib/transport/thrift_transport.h>
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /*! \file thrift_framed_transport.h
  *  \brief Implementation of a Thrift framed transport.  Subclasses
@@ -72,6 +74,8 @@ struct _ThriftFramedTransportClass
 /* used by THRIFT_TYPE_FRAMED_TRANSPORT */
 GType thrift_framed_transport_get_type (void);
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif

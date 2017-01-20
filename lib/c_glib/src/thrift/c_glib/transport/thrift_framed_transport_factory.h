@@ -25,7 +25,9 @@
 #include <thrift/c_glib/transport/thrift_transport.h>
 #include <thrift/c_glib/transport/thrift_transport_factory.h>
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /*! \file thrift_framed_transport_factory.h
  *  \brief Wraps a transport with a ThriftFramedTransport.
@@ -81,6 +83,8 @@ ThriftTransport *
 thrift_framed_transport_factory_get_transport (ThriftTransportFactory *factory,
                                                ThriftTransport *transport);
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif /* _THRIFT_FRAMED_TRANSPORT_FACTORY_H */

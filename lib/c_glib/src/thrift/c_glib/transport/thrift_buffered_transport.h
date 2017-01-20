@@ -25,7 +25,9 @@
 
 #include <thrift/c_glib/transport/thrift_transport.h>
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /*! \file thrift_buffered_transport.h
  *  \brief Implementation of a Thrift buffered transport.  Subclasses
@@ -72,6 +74,8 @@ struct _ThriftBufferedTransportClass
 /* used by THRIFT_TYPE_BUFFERED_TRANSPORT */
 GType thrift_buffered_transport_get_type (void);
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif

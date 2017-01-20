@@ -24,7 +24,9 @@
 
 #include <thrift/c_glib/protocol/thrift_protocol_factory.h>
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /* type macros */
 #define THRIFT_TYPE_COMPACT_PROTOCOL_FACTORY \
@@ -65,6 +67,8 @@ struct _ThriftCompactProtocolFactoryClass
 /* used by THRIFT_TYPE_COMPACT_PROTOCOL_FACTORY */
 GType thrift_compact_protocol_factory_get_type (void);
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif /* _THRIFT_COMPACT_PROTOCOL_FACTORY_H */

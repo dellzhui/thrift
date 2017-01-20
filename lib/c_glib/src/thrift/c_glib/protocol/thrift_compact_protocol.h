@@ -26,7 +26,9 @@
 #include <thrift/c_glib/protocol/thrift_protocol.h>
 #include <thrift/c_glib/transport/thrift_transport.h>
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /*! \file thrift_compact_protocol.h
  *  \brief Compact protocol implementation of a Thrift protocol.  Implements the
@@ -102,6 +104,8 @@ struct _ThriftCompactProtocolClass
 /* used by THRIFT_TYPE_COMPACT_PROTOCOL */
 GType thrift_compact_protocol_get_type (void);
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif /* _THRIFT_COMPACT_PROTOCOL_H */

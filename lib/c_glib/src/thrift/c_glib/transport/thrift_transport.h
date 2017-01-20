@@ -22,7 +22,9 @@
 
 #include <glib-object.h>
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /*! \file thrift_transport.h
  *  \brief Abstract class for Thrift transports.
@@ -171,6 +173,8 @@ GQuark thrift_transport_error_quark (void);
 /* define macro for invalid socket */
 #define THRIFT_INVALID_SOCKET (-1)
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif /* _THRIFT_TRANSPORT_H */

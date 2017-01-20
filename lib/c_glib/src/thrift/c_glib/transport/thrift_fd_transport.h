@@ -24,7 +24,9 @@
 
 #include "thrift_transport.h"
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /*! \file thrift_fd_transport.h
  *  \brief Class for Thrift file descriptor transports.
@@ -69,6 +71,8 @@ struct _ThriftFDTransportClass
 /* used by THRIFT_TYPE_FD_TRANSPORT */
 GType thrift_fd_transport_get_type (void);
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif /* _THRIFT_FD_TRANSPORT_H */

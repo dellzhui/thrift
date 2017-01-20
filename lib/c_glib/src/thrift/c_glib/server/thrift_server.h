@@ -27,7 +27,9 @@
 #include <thrift/c_glib/transport/thrift_transport_factory.h>
 #include <thrift/c_glib/protocol/thrift_protocol_factory.h>
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /*! \file thrift_server.h
  *  \brief Abstract class for Thrift servers.
@@ -87,7 +89,9 @@ gboolean thrift_server_serve (ThriftServer *server, GError **error);
  */
 void thrift_server_stop (ThriftServer *server);
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif /* _THRIFT_SERVER_H */
 

@@ -47,7 +47,9 @@
 /* --------------------------------------------------------------------------
    The ContainerService handler we'll use for testing */
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 GType test_container_service_handler_get_type (void);
 
@@ -87,7 +89,9 @@ struct _TestContainerServiceHandlerClass {
 typedef struct _TestContainerServiceHandlerClass
   TestContainerServiceHandlerClass;
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 /* -------------------------------------------------------------------------- */
 

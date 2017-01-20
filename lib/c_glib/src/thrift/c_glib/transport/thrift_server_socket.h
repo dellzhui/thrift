@@ -24,7 +24,9 @@
 
 #include "thrift_server_transport.h"
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /*! \file thrift_server_socket.h
  *  \brief Socket implementation of a Thrift server transport.  Implements the
@@ -85,6 +87,8 @@ typedef enum
 GQuark thrift_server_socket_error_quark (void);
 #define THRIFT_SERVER_SOCKET_ERROR (thrift_server_socket_error_quark ())
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif

@@ -24,7 +24,9 @@
 
 #include <thrift/c_glib/server/thrift_server.h>
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /*! \file thrift_simple_server.h
  *  \brief A simple Thrift server, single-threaded.
@@ -64,7 +66,9 @@ struct _ThriftSimpleServerClass
 /* used by THRIFT_TYPE_SIMPLE_SERVER */
 GType thrift_simple_server_get_type (void);
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif /* _THRIFT_SIMPLE_SERVER_H */
 

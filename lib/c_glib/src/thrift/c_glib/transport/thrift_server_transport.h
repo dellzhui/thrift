@@ -24,7 +24,9 @@
 
 #include "thrift_transport.h"
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /*! \file thrift_server_transport.h
  *  \brief Abstract class for Thrift server transports.
@@ -84,6 +86,8 @@ ThriftTransport *thrift_server_transport_accept
 gboolean thrift_server_transport_close (ThriftServerTransport *transport,
                                         GError **error);
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif /* _THRIFT_SERVER_TRANSPORT_H */

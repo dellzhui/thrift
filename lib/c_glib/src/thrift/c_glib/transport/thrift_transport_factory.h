@@ -24,7 +24,9 @@
 
 #include "thrift_transport.h"
 
-G_BEGIN_DECLS
+#ifdef  __cplusplus
+extern "C" {
+#endif
 
 /*! \file thrift_transport_factory.h
  *  \brief Base class for Thrift Transport Factories.  Used by Thrift Servers
@@ -66,6 +68,8 @@ GType thrift_transport_factory_get_type (void);
 /* virtual public methods */
 ThriftTransport *thrift_transport_factory_get_transport (ThriftTransportFactory *factory, ThriftTransport *transport);
 
-G_END_DECLS
+#ifdef  __cplusplus
+}
+#endif
 
 #endif /* _THRIFT_TRANSPORT_FACTORY_H */
